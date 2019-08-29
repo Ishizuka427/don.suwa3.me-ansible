@@ -26,4 +26,4 @@ pip install ansible
 - Python3
 - Ansible
 
-![demo](https://raw.githubusercontent.com/suwa3/suwa3.github.com/img/don.suwa3.me-top.png)
+![demo](https://github.com/suwa3/suwa3.github.com/img/don.suwa3.me-top.png)
