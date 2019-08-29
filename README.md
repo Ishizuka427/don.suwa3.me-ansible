@@ -1,5 +1,7 @@
 # don.suwa3.me-ansible  - どんすわ構成管理
 
+![don suwa3 me-top](https://user-images.githubusercontent.com/45281231/63927176-2795c300-ca88-11e9-8a97-2ea25cb7521d.png)
+
 ## これは何か？
 
 - https://don.suwa3.me の構成管理
@@ -25,5 +27,3 @@ pip install ansible
 
 - Python3
 - Ansible
-
-![demo](https://github.com/suwa3/suwa3.github.com/img/don.suwa3.me-top.png)
