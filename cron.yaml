@@ -17,5 +17,5 @@
         minute: "0"
         hour: "0"
         user: "root"
-        job: "docker run --rm -it --link mastodon_db_1 --volume /opt/backup:/mnt/backup --network mastodon_internal_network postgres:9.6-alpine /bin/sh -c \"pg_dump -U postgres -h mastodon_db_1 postgres | gzip -c > /mnt/backup/dump-date +'\\%Y-\\%m-\\%d'.sql.gz\""
+        job: "docker run --link mastodon_db_1 --volume /opt/backup:/mnt/backup --network mastodon_internal_network postgres:9.6-alpine /bin/sh -c \"pg_dump -U postgres -h mastodon_db_1 postgres | gzip -c > /mnt/backup/dump-`date +'%Y-%m-%d'`.sql.gz; exit\" > /var/log/cron.mastodon-db-backup.log 2>&1"
         state: "present"
