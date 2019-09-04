@@ -1,15 +1,5 @@
 - hosts: all
   tasks:
-    - name: Ensure a job that runs at 2 and 5 exists. Creates an entry like "0 5,2 * * ls -alh > /dev/null"
-      cron:
-        name: "check dirs"
-        minute: "0"
-        hour: "5,2"
-        job: "ls -alh > /dev/null"
-        state: "absent"
-
-- hosts: all
-  tasks:
     - name: postgres:9.6-alpine pg_dump-mastodon_db
       become: yes
       cron:
@@ -18,4 +8,16 @@
         hour: "0"
         user: "root"
         job: "docker run --link mastodon_db_1 --volume /opt/backup:/mnt/backup --network mastodon_internal_network postgres:9.6-alpine /bin/sh -c \"pg_dump -U postgres -h mastodon_db_1 postgres | gzip -c > /mnt/backup/dump-`date +'%Y-%m-%d'`.sql.gz; exit\" > /var/log/cron.mastodon-db-backup.log 2>&1"
+        state: "present"
+
+- hosts: all
+  tasks:
+    - name: media remove on Docker
+      become: yes
+      cron:
+        name: "media remove on Docker"
+        minute: "0"
+        hour: "1"
+        user: "root"
+        job: "docker-compose -f /home/ubuntu/mastodon/docker-compose.yml run --rm web bundle exec bin/tootctl media remove --days=20"
         state: "present"
