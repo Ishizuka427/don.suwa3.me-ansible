@@ -13,6 +13,16 @@
 ```
 ansible-playbook -i hosts cron.yml
 ```
+### Maintenanceモードへの切り替え
+
+```
+ansible-playbook -i hosts maintenance.yml
+```
+### Normalモードへの切り替え
+
+```
+ansible-playbook -i hosts normal.yml
+```
 
 ## 実行環境の作成
 
