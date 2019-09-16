@@ -1,0 +1,14 @@
+- hosts: all
+  tasks:
+    - name: changed normal page
+      become: yes
+      file:
+          src: /etc/nginx/sites-available/don.suwa3.me
+          dest: /etc/nginx/sites-enabled/don.suwa3.me
+          state: link
+
+    - name: Restart service httpd, in all cases
+      become: yes
+      systemd:
+          name: nginx.service
+          state: reloaded                            
