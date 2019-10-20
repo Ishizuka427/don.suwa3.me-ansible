@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - name:nginx.conf
+      become: yes
+      template:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
+        owner: root
+        group: root
+        mode: 0644
