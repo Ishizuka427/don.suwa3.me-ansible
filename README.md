@@ -1,6 +1,5 @@
 # don.suwa3.me-ansible  - どんすわ構成管理
-
-![don suwa3 me-top](https://user-images.githubusercontent.com/45281231/63927176-2795c300-ca88-11e9-8a97-2ea25cb7521d.png)
+![don suwa3 me-top](https://user-images.githubusercontent.com/45281231/64934735-c5123480-d887-11e9-9257-c0d55618db00.png)
 
 ## これは何か？
 
@@ -13,6 +12,16 @@
 
 ```
 ansible-playbook -i hosts cron.yml
+```
+### Maintenanceモードへの切り替え
+
+```
+ansible-playbook -i hosts maintenance.yml
+```
+### Normalモードへの切り替え
+
+```
+ansible-playbook -i hosts normal.yml
 ```
 
 ## 実行環境の作成
