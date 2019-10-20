@@ -1,6 +1,6 @@
 - hosts: all
   tasks:
-    - name:nginx.conf
+    - name: nginx.conf
       become: yes
       template:
         src: nginx.conf
