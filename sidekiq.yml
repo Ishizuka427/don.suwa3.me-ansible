@@ -1,0 +1,7 @@
+- name: Change the concurrency of Sidekiq
+  template:
+    src: templates/sidekiq.yml
+    dest: /config/sidekiq.yml
+    owner: ubuntu
+    group: wheel
+    mode: '0644'
