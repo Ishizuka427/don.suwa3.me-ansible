@@ -1,7 +1,10 @@
-- name: Change the concurrency of Sidekiq
-  template:
-    src: templates/sidekiq.yml
-    dest: /config/sidekiq.yml
-    owner: ubuntu
-    group: wheel
-    mode: '0644'
+- hosts: all
+  tasks:
+    - name: Change the concurrency of Sidekiq
+      become: yes
+      template:
+        src: templates/sidekiq.yml
+        dest: mastodon/config/sidekiq.yml
+        owner: root
+        group: root
+        mode: '0644'
