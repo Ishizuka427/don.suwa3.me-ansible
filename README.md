@@ -1,30 +1,31 @@
-# don.suwa3.me-ansible  - どんすわ構成管理
+# don.suwa3.me-ansible
 ![don suwa3 me-top](https://user-images.githubusercontent.com/45281231/64934735-c5123480-d887-11e9-9257-c0d55618db00.png)
 
-## これは何か？
+## What is this?
 
-- https://don.suwa3.me の構成管理
-- 今の所ansibleのplaybook集
+Ansible for Configuration Management
+- https://don.suwa3.me 
+- A collection of Ansible playbooks
 
-## 使い方
+## How to use
 
-### cronの設定
+### cron
 
 ```
 ansible-playbook -i hosts cron.yml
 ```
-### Maintenanceモードへの切り替え
+### Switch to Maintenance mode
 
 ```
 ansible-playbook -i hosts maintenance.yml
 ```
-### Normalモードへの切り替え
+### Switch to Normal mode
 
 ```
 ansible-playbook -i hosts normal.yml
 ```
 
-## 実行環境の作成
+## Creating the execution environment
 
 ```
 python3 -m venv ./NAME
@@ -32,7 +33,7 @@ source ./NAME/bin/activate
 pip install ansible
 ```
 
-## 依存ツール
+## Dependent Tools
 
 - Python3
 - Ansible
